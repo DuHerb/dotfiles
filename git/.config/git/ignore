@@ -1,0 +1,23 @@
+**/.claude/settings.local.json
+**/CLAUDE.local.md
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.sublime-workspace
+
+# Environment
+.env
+.env.local
+.env.*.local

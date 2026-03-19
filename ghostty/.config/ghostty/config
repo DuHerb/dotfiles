@@ -1,0 +1,20 @@
+# options
+# background-opacity = 0.99
+# background-blur-radius = 10
+
+# theme
+#theme = TokyoNight Storm
+theme = Catppuccin Macchiato
+# custom-shader = ghostty-shaders/in-game-crt.glsl
+
+# keybindings
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+keybind = cmd+shift+r=prompt_surface_title
+
+# styles
+window-padding-x = 8
+window-padding-balance = true
+
+# bell
+bell-features = title
+# keybind = shift+enter=text:\n

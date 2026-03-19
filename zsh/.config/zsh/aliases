@@ -1,0 +1,57 @@
+# ALIASES
+
+# fix multiple VSCODE Dock icon bug
+alias code="open -b com.microsoft.VSCode"
+
+# zsh
+alias myaliases="zed ~/.config/zsh/aliases"
+alias sz="source ~/.zshrc"
+alias cz="zed ~/.zshrc"
+alias sp="source ~/.zprofile"
+alias ezp="zed ~/.zprofile"
+
+# local navigation
+alias desk="cd ~/Desktop"
+alias home="cd ~"
+alias '?'="pwd"
+
+# unix
+alias t="touch"
+
+# Homebrew Services
+alias brewstart="brew services start"
+alias brewstop="brew services stop"
+alias brewlist="brew services list"
+
+# neovim
+alias nv="nvim"
+
+# tmux
+alias tm="tmux"
+alias tma="tmux attach"
+alias tmd="tmux detach"
+alias tmls="tmux ls"
+
+# lazygit
+alias lz="lazygit"
+alias lzd='lazydocker'
+
+# git
+alias gcp="git cherry-pick -n"
+alias gcob="git checkout -b"
+alias gpo="git pull origin"
+alias gsm="git stash push -m"
+alias dev="gco development"
+alias master="gco master"
+
+function gsa() {
+  git stash apply stash@{$@}
+}
+
+# terminal
+alias openports="echo list open ports; sudo lsof -i -n -P | grep TCP"
+alias nukemodules="echo delete node_modules; rm -fr node_modules"
+
+function docker-exec() {
+  docker exec -it {$@} sh
+}

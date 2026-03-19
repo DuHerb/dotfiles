@@ -1,0 +1,21 @@
+[user]
+	email = dustnpdx@gmail.com
+	name = Dustin Herboldshimer
+[core]
+	excludesfile = ~/.config/git/ignore
+	pager = bat --style=plain
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[push]
+	autoSetupRemote = true
+[rerere]
+	enabled = true
+[diff]
+	algorithm = histogram
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
