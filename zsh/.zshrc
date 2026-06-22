@@ -14,6 +14,9 @@ export PATH="/opt/homebrew/bin:$PATH"
 # Add local bin directory to PATH
 export PATH="$HOME/.local/bin:$PATH"
 
+# Rust/Cargo
+. "$HOME/.cargo/env"
+
 # JAVA_HOME (using Java 21)
 export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 
@@ -95,8 +98,17 @@ source "$HOME/.config/zsh/aliases"
 # --------------------------------------------------------------------------
 # Tool-Specific Initializations
 # --------------------------------------------------------------------------
-# Initialize fast node manager (fnm)
-eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
+# Prune dead fnm multishell entries (once daily)
+_fnm_prune_marker="/tmp/.fnm_pruned_$(date +%Y%m%d)"
+if [[ ! -f "$_fnm_prune_marker" ]]; then
+  for entry in ~/.local/state/fnm_multishells/*; do
+    name="${entry##*/}"; pid="${name%%_*}"
+    kill -0 "$pid" 2>/dev/null || rm -f "$entry"
+  done
+  touch "$_fnm_prune_marker"
+fi
+
+# fnm init moved to end of file to win PATH precedence over Homebrew node
 
 # Initialize Starship Prompt (if used)
 eval "$(starship init zsh)"
@@ -127,6 +139,9 @@ if [[ "$CLAUDECODE" != "1" ]]; then
   alias cd='z'
   alias cdi='zi'
 fi
+
+# Quick nav to dotfiles
+alias dot='cd ~/dotfiles'
 
 # eza aliases for improved directory listings without the eza plugin overhead
 alias ls="eza --color=always --icons=always --no-user --group-directories-first -h"
@@ -234,3 +249,6 @@ _fzf_comprun() {
 
 # bun completions
 [ -s "$HOME/.oh-my-zsh/completions/_bun" ] && source "$HOME/.oh-my-zsh/completions/_bun"
+
+# Initialize fast node manager (fnm) — last to win PATH over Homebrew node
+eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
