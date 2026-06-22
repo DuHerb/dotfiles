@@ -7,6 +7,9 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "edit_predictions": {
+    "provider": "zed"
+  },
   "indent_guides": {
     "coloring": "fixed",
     "background_coloring": "disabled"
@@ -27,9 +30,6 @@
     "blinking": "on"
   },
   "icon_theme": "Catppuccin Macchiato",
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
   "agent": {
     "default_profile": "write",
     "dock": "right",
@@ -47,7 +47,7 @@
     "light": "One Light",
     // "dark": "One Dark"
     // "dark": "Tokyo Night Storm"
-    "dark": "Catppuccin Macchiato"
+    "dark": "Catppuccin Frappé"
   },
   "experimental.theme_overrides": {
     "editor.active_line_number": "#ff9e64"
