@@ -3,8 +3,8 @@
 # background-blur-radius = 10
 
 # theme
-#theme = TokyoNight Storm
-theme = Catppuccin Macchiato
+theme = TokyoNight Storm
+#theme = Catppuccin Macchiato
 # custom-shader = ghostty-shaders/in-game-crt.glsl
 
 # keybindings
@@ -14,6 +14,7 @@ keybind = cmd+shift+r=prompt_surface_title
 # styles
 window-padding-x = 8
 window-padding-balance = true
+unfocused-split-opacity = 0.5
 
 # bell
 bell-features = title
