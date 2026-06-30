@@ -47,7 +47,7 @@
     "light": "One Light",
     // "dark": "One Dark"
     // "dark": "Tokyo Night Storm"
-    "dark": "Catppuccin Frappé"
+    "dark": "Tokyo Night Storm"
   },
   "experimental.theme_overrides": {
     "editor.active_line_number": "#ff9e64"
